@@ -35,6 +35,7 @@ if(MSVC OR IS_ICPC)
 else()
   option(FCL_STATIC_LIBRARY "Whether the FCL library should be static rather than shared" OFF)
 endif()
+option(FCL_STATIC_LIBRARY "Whether the FCL library should be static rather than shared" ON)
 
 # Whether to enable SSE
 option(FCL_USE_SSE "Whether FCL should SSE instructions" OFF)
@@ -115,6 +116,8 @@ if(PKG_CONFIG_FOUND)
   endif()
 endif()
 
+set(CCD_INCLUDE_DIRS "/usr/local/include")
+set(CCD_LIBRARY_DIRS "/usr/local/lib")
 if(NOT CCD_FOUND)
     # if pkfconfig is not installed, then fall back on more fragile detection
     # of ccd
